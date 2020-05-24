@@ -48,24 +48,11 @@ namespace GradeBook.GradeBooks
                 {
                     grades.Add(student.AverageGrade);
                 }
-                grades = grades.OrderBy(o => o).ToList();
+                grades = grades.OrderByDescending(o => o).ToList();
             }
 
             return grades;
 
         }
-
-        private double getMaxGrade()
-        {
-            double max = 0;
-            foreach (Student student in Students)
-            {
-                if (student.AverageGrade > max) max = student.AverageGrade;
-
-            }
-
-            return max;
-        }
-
     }
 }
